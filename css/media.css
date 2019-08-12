@@ -1,0 +1,72 @@
+/*
+audio et video player 
+Comment centrer:
+display : block Ssi inline 
+width : < 100%;
+margin auto;
+*/
+
+
+h2.anim {
+    animation-duration: 3s;
+    animation-name: slidein;
+    color: black;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%; 
+        color: white;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+        color: black;
+    }
+}
+
+svg, audio, video{
+    display : block;
+    width : 60%;/*100%;*/
+    margin:auto;  
+    background-color: lightsteelblue;
+    border: 1px solid lightsteelblue;
+
+}
+svg{
+    height:300px ;
+}
+
+
+svg.dessin{
+    /*display : inline;*/
+    width: 200px;
+    height: 110px;
+    margin: auto;
+}
+/* positionnement côte à côte  */
+aside{
+   /* display: flex;*/
+}
+
+
+/* tablet media */
+@media screen and (max-width: 1024px){
+
+    audio, video{
+        width : 100%;
+    }
+}
+/* smartphone  media */
+@media screen and (max-width: 768px){
+    svg, audio, video{
+        width : 100%;
+        
+    }
+    /* wrap?  */
+    svg{
+   
+    }
+}

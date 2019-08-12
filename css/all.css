@@ -1,0 +1,483 @@
+/* Optimisation CSS */
+/* 
+    Created on : 09-août-2019, 22:12:27
+    Author     : métier
+*/
+
+/* general */
+body{
+    background-color: #000;
+    /*width:99%;*/
+    color: white;
+    padding : 1em 0;
+    font-size: 1em;
+    margin: 0;
+}
+main{
+    width:80%;
+    margin: auto;
+    border: 1px solid white;
+    padding : 1em;
+    min-height: 800px;
+}
+
+h1{
+    text-align: center;
+}
+img{
+    width:100%;
+}
+/**********************************/
+/* Styles menu de navigation sensible à la taille de l'écran */
+
+nav{
+    width:99%;
+}
+nav ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    text-align: center;
+
+}
+nav ul li{
+    display:inline;
+    padding:1em 0;
+    margin:0;
+}
+nav ul li a{
+    display:inline-block;
+    padding:1em;
+	text-decoration : none;
+}
+
+/* unvisited link */
+nav ul li a:link {
+    background-color: lightsteelblue;
+    color: white;
+}
+
+/* visited link */
+nav ul li a:visited {
+    background-color: lightsteelblue;
+    color: white;
+}
+
+/* mouse over link */
+nav ul li a:hover {
+    background-color: steelblue;
+    color: lightsteelblue;
+}
+
+/* selected link */
+nav ul li a:active {
+    background-color: steelblue;
+    color: lightsteelblue;
+}
+
+
+
+
+/* tablet nav */
+@media screen and (max-width: 1024px){
+    main, nav ul {
+       width:99%;
+    }
+	main{
+       border:none;
+   padding : 0 0;
+    }
+	
+}
+/* smartphone nav  */
+@media screen and (max-width: 768px){
+    nav ul li a{
+        display:block;
+    }
+    
+}
+
+/**********************************/
+/*  style cv */
+
+article{
+    background-color: white;
+    color: black;
+        /*width: 99%;
+	display: flex;
+	font-size: 100%;*/
+}
+h2{
+    font-size: 1.5em; 
+}
+p {
+    font-family: 'Amita';
+    text-align: center;
+}
+img{
+    width:auto;
+
+}
+img:hover {
+    opacity: 0.9;
+}
+    img{
+        border: .2em lightsteelblue solid;
+        border-radius : 0 0 2em 0 ;
+        /* opacity: 0.5;*/
+        -webkit-box-shadow: .2em .2em .1em 0  rgba(0,0,0,0.75);
+        -moz-box-shadow: .2em .2em .1em 0  rgba(0,0,0,0.75);
+        box-shadow: .2em .2em .1em 0 rgba(0,0,0,0.75);
+    }
+
+
+
+/* desktop large screen cv*/
+
+  
+   /* article{
+        display: flex;
+        margin : 0 2em 0 0;
+    }
+
+section#droite article {
+	display: flex;
+	justify-content: space-around;
+}
+
+section.droite section.ss-section{
+    flex-direction: column;
+}
+*/
+
+
+
+
+
+
+
+
+
+/* tablet cv */
+@media screen and (max-width: 1024px){
+    main{
+        width:99%;
+        margin: auto;
+        border:none;
+        padding : 1em;
+    }
+    article{
+        display: flex;
+        /*margin : 0 2em 0 0;*/
+    }
+    section{
+        width: 75%;
+        border-left: 0.2em dashed lightsteelblue;
+        padding: 1em;
+    }
+    
+
+    /* Style de la section avec une classe nommée "gauche" cv */
+    section.gauche{
+        width: 20%;
+        border-left: none;
+    }
+    
+    ul{
+        list-style-type: none;
+        margin:1em;
+    }
+
+    h2{
+        text-align: right;
+        padding-right: 2em;
+        border-bottom: 0.1em solid lightsteelblue;
+        border-radius: 0 0 2em 0; /* valeur aux 4 coins left, top, right, bottom */
+    }
+    p {
+        text-align: right;
+    }
+
+
+}
+
+/* smartphone cv */
+@media screen and (max-width: 768px){
+
+}
+
+
+
+/**********************************/
+/*
+audio et video player 
+Comment centrer:
+display : block Ssi inline 
+width : < 100%;
+margin auto;
+*/
+
+
+h2.anim {
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%; 
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+svg, audio, video{
+    display : block;
+    width : 60%;/*100%;*/
+    margin:auto;  
+    background-color: lightsteelblue;
+    border: 1px solid lightsteelblue;
+
+}
+svg{
+    height:300px ;
+}
+
+
+svg.dessin{
+    display : inline;
+    width: 200px;
+    height: 110px;
+}
+/* positionnement côte à côte  */
+aside{
+    display: flex;
+}
+
+
+/* tablet media */
+@media screen and (max-width: 1024px){
+
+    audio, video{
+        width : 100%;
+    }
+}
+/* smartphone  media */
+@media screen and (max-width: 768px){
+    svg, audio, video{
+        width : 100%;
+        
+    }
+    /* wrap?  */
+    svg{
+   
+    }
+}
+/*********** media lightbox conflit  *****************/
+* {
+  box-sizing: border-box;
+}
+
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*********** media lightbox conflit END *****************/
+
+
+/*************************************************************/
+/* responsive form W3Schools */ 
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    /*color: black;*/
+}
+
+/* Style the submit button */
+input[type=submit] {
+    background-color: Maroon; /*#4CAF50;*/
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Style the container 
+.container {
+    border-radius: 5px;
+   background-color: #f2f2f2;
+    padding: 20px;
+}*/
+
+/* Floating column for labels: 25% width */
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}  

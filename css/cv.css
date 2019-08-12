@@ -1,0 +1,129 @@
+/* resume style */
+
+article {
+    background-color: white;
+    color: black;
+    padding: 1em;
+    margin: 0.3em 0 0 0;
+}
+
+section.gauche a img{
+    width: auto;
+}
+
+
+section.gauche img{
+    border: .2em lightsteelblue solid;
+    border-radius : 0 0 2em 0 ;
+    -webkit-box-shadow: .2em .2em .1em 0  rgba(0,0,0,0.75);
+    -moz-box-shadow: .2em .2em .1em 0  rgba(0,0,0,0.75);
+    box-shadow: .2em .2em .1em 0 rgba(0,0,0,0.75);
+}
+
+section.gauche img:hover {
+    opacity: 0.9;
+}
+
+    section.gauche{
+        width: 20%;
+        border-left: none;
+        padding: 0 .5em 0 0; 
+    }
+    
+    section.gauche p {
+    font-family: 'Amita';
+    text-align: right;
+    line-height: 1.2em;
+}
+    section.droite{
+        width: 75%;
+        border-left: 0.2em dashed lightsteelblue;
+        padding: 1em;
+    }
+
+    section.droite h2{
+        font-size: 1.5em; 
+        text-align: right;
+        padding-right: 2em;
+        border-bottom: 0.1em solid lightsteelblue;
+        border-radius: 0 0 2em 0; /* valeur aux 4 coins left, top, right, bottom */
+    }
+
+    section.droite ul{
+        list-style-type: none;
+        margin:1em;
+    }
+    
+/*****************************
+positionnement flex desktop 
+******************************/
+
+   article{
+        display: flex;
+    }
+    
+/*****************************
+positionnement flex desktop - END
+******************************/ 
+
+
+/* tablet */
+@media screen and (max-width: 1024px){
+    main{
+        width:99%;
+        /* margin: auto;*/
+        border: none;
+        padding : 0 0; /*1em;*/
+    }
+ 
+
+
+/*****************************
+positionnement flex tablet 
+******************************/
+/*
+section.gauche {
+   display: flex;
+    justify-content: space-around;
+     align-items: baseline;
+}
+section.gauche a {
+order: 3 ;
+}
+section.droite {
+    display: flex;
+    justify-content: space-around;
+}
+section.droite section{
+    flex-direction: column;
+    
+}
+section.gauche a img{
+    width: auto;
+order: 3 ;
+}
+
+*/
+
+/*****************************
+positionnement flex tablet - END
+******************************/
+
+
+}
+
+/* smartphone  */
+@media screen and (max-width: 768px){
+    img{
+        display: none;
+    }
+    
+    
+    /*****************************
+positionnement flex smart 
+******************************/
+    
+    /*****************************
+positionnement flex smart - END
+******************************/
+}

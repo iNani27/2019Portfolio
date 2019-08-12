@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+Portfolio media site Nani I
+tuto on 
+-->
+<html>
+    <head>
+        <title>Galerie image</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Isabelle NANI - Vous trouverez ici le site web présentant mes compétences et mes passions : HTML, CSS, ... le code  ">
+        <meta name="keywords" content="HTML,CSS, Formation informatique">
+        <meta name="author" content="NANI Isabelle">
+        <link href="css/lightbox.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <!-- Images used to open the lightbox -->
+        <h2 style="text-align:center">Lightbox 
+            <br/>
+            Référence en ligne : 
+            <a target="_blank" href="https://www.w3schools.com/howto/howto_js_lightbox.asp" title="">How To Create a Lightbox - W3Schools</a>
+        </h2>
+        
+        <!-- lightbox
+       https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_lightbox
+       
+       4 images 
+       2 tailles
+       600*400
+       et 
+       1000*350
+       
+       nom�e 1,2,3,4
+       et idem_wide
+       
+       + alt as caption
+        -->
+        
+        <div class="row">
+            <div class="column">
+                <img src="image/img_1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="image/img_2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="image/img_3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="image/img_4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+
+                <div class="mySlides">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="image/img_1_wide.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="image/img_2_wide.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="image/img_3_wide.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="image/img_4_wide.jpg" style="width:100%">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+
+                <div class="column">
+                    <img class="demo cursor" src="image/img_1_wide.jpg" style="width:100%" onclick="currentSlide(1)" alt="piscine">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="image/img_2_wide.jpg" style="width:100%" onclick="currentSlide(2)" alt="chemin">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="image/img_3_wide.jpg" style="width:100%" onclick="currentSlide(3)" alt="rocher">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="image/img_4_wide.jpg" style="width:100%" onclick="currentSlide(4)" alt="
+                         skate">
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function openModal() {
+                document.getElementById("myModal").style.display = "block";
+            }
+
+            function closeModal() {
+                document.getElementById("myModal").style.display = "none";
+            }
+
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = slides.length
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                captionText.innerHTML = dots[slideIndex - 1].alt;
+            }
+        </script>
+
+
+    </body>
+</html>

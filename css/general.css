@@ -1,0 +1,28 @@
+body{
+    background-color: #000;
+    width:100%;
+    color: white;
+    padding : 1em 0;
+    font-size: 1em;
+    margin: 0;
+}
+main{
+    width: 80%;
+    margin: auto;
+    border: 1px solid white;
+    padding : 1em;
+}
+/* to del after debug
+objectif forcer la barre de défilement à apparaîte dans les 3 tailles  > 1024 < 768
+*/
+main{
+    min-height: 800px;
+}
+
+
+h1{
+    text-align: center;
+}
+img{
+    width: 100%;
+}
